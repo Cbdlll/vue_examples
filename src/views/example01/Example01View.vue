@@ -1,4 +1,7 @@
 <script setup lang="ts"></script>
 <template>
-  <div><h1>example01</h1></div>
+  <div>
+    <h1>example01</h1>
+    <p>new p</p>
+  </div>
 </template>
