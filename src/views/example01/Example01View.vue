@@ -2,6 +2,6 @@
 <template>
   <div>
     <h1>example01</h1>
-    <p>wow i learned git</p>
+    <p>wow i learned git, hahahaha</p>
   </div>
 </template>
