@@ -2,6 +2,6 @@
 <template>
   <div>
     <h1>example01</h1>
-    <p>new p</p>
+    <p>this is new p</p>
   </div>
 </template>
