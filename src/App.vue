@@ -18,6 +18,5 @@ import SideBarView from './views/SideBarView.vue'
 }
 #router {
   border: 1px solid red;
-  flex: 1;
 }
 </style>
