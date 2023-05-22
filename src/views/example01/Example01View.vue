@@ -1,5 +1,6 @@
 <template>
   <div>
+    zhijieyong git push
     <h3>{{ currentCreditR }}/17.5</h3>
     <template v-for="(c, index) of Courses" :key="index">
       <label>
