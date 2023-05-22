@@ -19,7 +19,7 @@
 <script lang="ts" setup>
 import { Courses, type Course } from '@/datasource/Exp01'
 import { ref, watch } from 'vue'
-const currentCredit = 0
+const currentCredit = 0 
 const currentCreditR = ref(currentCredit)
 const selectCourses: Course[] = []
 const selectCoursesR = ref<Course[]>(selectCourses)
