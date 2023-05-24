@@ -1,5 +1,4 @@
 <template>
-  <h1><input v-model="currentCreditR" /></h1>
   <div>
     <p style="font-weight: bold">
       <span :style="{ color: currentCreditR >= requiredCredit ? 'green' : 'red' }">
