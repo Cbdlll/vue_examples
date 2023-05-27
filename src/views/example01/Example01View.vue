@@ -1,7 +1,10 @@
 <template>
   <div>
     <p style="font-weight: bold">
-      <span :style="{ color: currentCreditR >= requiredCredit ? 'green' : 'red' }">
+      <!-- <span :style="{ color: currentCreditR >= requiredCredit ? 'green' : 'red' }">
+        {{ currentCreditR }}
+      </span> -->
+      <span :style="{ color: colorR }">
         {{ currentCreditR }}
       </span>
       /{{ requiredCredit }}
@@ -24,6 +27,9 @@
 <script lang="ts" setup>
 import { listCourses, type Course } from '@/datasource/Exp01'
 import { ref, watch } from 'vue'
+
+const colorR = ref('red')
+
 const Courses = listCourses().sort((a, b) => a.openTime! - b.openTime!)
 const requiredCredit = 17.5
 const currentCredit = 0
@@ -36,6 +42,11 @@ watch(selectCoursesR, () => {
       currentCreditR.value += c.credit ?? 0
     })
   selectCoursesR.value.sort((a, b) => a.openTime! - b.openTime!)
+})
+watch(currentCreditR, () => {
+  if (currentCreditR.value > requiredCredit) colorR.value = 'green'
+  else colorR.value = 'red'
+  console.log(colorR)
 })
 </script>
 <style scoped>
