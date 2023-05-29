@@ -1,8 +1,8 @@
 <template>
   <div>
     <div>
-      <RouterLink to="/example03/foods" style="text-decoration: none">美食</RouterLink>
-      |
+      <!-- <RouterLink to="/example03/foods" style="text-decoration: none">美食</RouterLink>
+      | -->
       <RouterLink :to="{ name: 'foods' }" style="text-decoration: none">美食</RouterLink>
       |
       <RouterLink to="/example03/location" style="text-decoration: none">本地</RouterLink>
