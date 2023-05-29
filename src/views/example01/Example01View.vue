@@ -44,7 +44,7 @@ watch(selectCoursesR, () => {
   selectCoursesR.value.sort((a, b) => a.openTime! - b.openTime!)
 })
 watch(currentCreditR, () => {
-  if (currentCreditR.value > requiredCredit) colorR.value = 'green'
+  if (currentCreditR.value >= requiredCredit) colorR.value = 'green'
   else colorR.value = 'red'
   console.log(colorR)
 })
