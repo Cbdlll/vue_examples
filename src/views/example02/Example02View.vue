@@ -25,7 +25,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { listCourses, type Course } from '@/datasource/Exp01'
+import { listCourses, type Course } from '@/datasource/Exp02'
 import { ref, watch } from 'vue'
 
 const colorR = ref('red')
