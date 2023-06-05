@@ -4,7 +4,7 @@ import { ref } from 'vue'
 
 export const useExp03Store = defineStore('Exp03Store', () => {
     const shopListS = ref<Shop[]>([])
-    const listShopsA = async () => {
+    const listShopsA =  () => {
       if(shopListS.value.length == 0) {
         shopListS.value = listShops()
       }
