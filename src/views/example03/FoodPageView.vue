@@ -14,14 +14,13 @@
 </template>
 <script lang="ts" setup>
 //import { computed } from 'vue'
-import { useExp03Store } from './store'
+import { useExp03Store } from './store/index'
 import { storeToRefs } from 'pinia'
-//const store = storeToRefs(useExp03Store())
 const store = useExp03Store()
-store.listShopsA
+store.listShopsA()
 
-//const shopList = computed(() => store.shopListS)
 const shopList = storeToRefs(store).shopListS
+// const shopList = computed(() => store.shopListS)
 </script>
 <style scoped>
 * {
