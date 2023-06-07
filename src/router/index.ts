@@ -27,12 +27,12 @@ const router = createRouter({
           props: true,
           path: 'shops/:sid',
           component: () => import('@/views/example03/ShopPageView.vue')
+        },
+        {
+          props: true,
+          path: 'orders',
+          component: () => import('@/views/example03/OrderPageView.vue')
         }
-        // {
-        //   props: true,
-        //   path: 'orders',
-        //   component: () => import('@/views/example03/OrderPageView.vue')
-        // }
       ]
     }
   ]
