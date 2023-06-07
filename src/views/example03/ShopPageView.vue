@@ -28,8 +28,10 @@ const props = defineProps<Props>()
 
 const store = useExp03Store()
 //绑定state数据
+//使用计算属性
 const shop = computed(() => store.shopCacheS.find((s) => s.id == Number.parseInt(props.sid)))
 // 如果不存在(为空)，则模拟异步加载数据
+//shopCaches中没有对应的shop且store里有对应的shop
 !shop.value && store.getShopA(Number.parseInt(props.sid))
 // orders数组对象是响应式，添加移除元素是响应式
 const orders = store.ordersS
