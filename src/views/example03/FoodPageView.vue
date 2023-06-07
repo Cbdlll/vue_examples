@@ -18,7 +18,7 @@ import { useExp03Store } from './store'
 import { storeToRefs } from 'pinia'
 //const store = storeToRefs(useExp03Store())
 const store = useExp03Store()
-store.listShopsA()
+store.listShopsA
 
 //const shopList = computed(() => store.shopListS)
 const shopList = storeToRefs(store).shopListS

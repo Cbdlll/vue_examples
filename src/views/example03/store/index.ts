@@ -3,23 +3,17 @@ import { listShops, type Shop } from '../data/data'
 import { ref } from 'vue'
 
 export const useExp03Store = defineStore('Exp03Store', () => {
-    const shopListS = ref<Shop[]>([])
-    const listShopsA =  () => {
-      if(shopListS.value.length == 0) {
-        shopListS.value = listShops()
-      }
+  const shopListS = ref<Shop[]>([])
+  const listShopsA = () => {
+    if (shopListS.value.length == 0) {
+      shopListS.value = listShops()
     }
-    return {
-      shopListS,
-      listShopsA
-    }
-  })
-
-
-
-
-
-
+  }
+  return {
+    shopListS,
+    listShopsA
+  }
+})
 
 // export const useH2Store = defineStore('h2', () => {
 //   const shopListS = ref<Shop[]>([])

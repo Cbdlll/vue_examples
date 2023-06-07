@@ -25,7 +25,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { listCourses, type Course } from '@/datasource/Exp02'
+import { listCourses, type Course } from './data/Exp02'
 import { ref, watch } from 'vue'
 
 const colorR = ref('red')
@@ -37,16 +37,13 @@ const currentCreditR = ref(currentCredit)
 const selectCourses: Course[] = []
 const selectCoursesR = ref<Course[]>(selectCourses)
 watch(selectCoursesR, () => {
-  ;(currentCreditR.value = 0),
-    selectCoursesR.value.forEach((c) => {
-      currentCreditR.value += c.credit ?? 0
-    })
+  currentCreditR.value = 0
+  selectCoursesR.value.forEach((c) => {
+    currentCreditR.value += c.credit ?? 0
+  })
   selectCoursesR.value.sort((a, b) => a.openTime! - b.openTime!)
-})
-watch(currentCreditR, () => {
   if (currentCreditR.value >= requiredCredit) colorR.value = 'green'
   else colorR.value = 'red'
-  console.log(colorR)
 })
 </script>
 <style scoped>
