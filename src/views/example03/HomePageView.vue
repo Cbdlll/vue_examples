@@ -30,8 +30,6 @@ console.log(orders)
 
 watch(orders.value, () => {
   cost.value = 0
-  console.log(cost)
-
   orders.value.forEach((o) => {
     cost.value += o.quantity * o.item.price!
   }),
