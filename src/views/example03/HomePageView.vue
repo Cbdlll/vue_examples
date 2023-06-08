@@ -36,3 +36,10 @@ watch(orders.value, () => {
     { deep: true }
 })
 </script>
+<style scoped>
+.order {
+  display: inline-black;
+  background: sandybrown;
+  border-radius: 5px;
+}
+</style>
