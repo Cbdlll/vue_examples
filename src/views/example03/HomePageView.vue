@@ -21,20 +21,21 @@
 <script lang="ts" setup>
 import { watch, ref } from 'vue'
 import { useExp03Store } from './store'
-import { storeToRefs } from 'pinia'
 const cost = ref(0)
 const store = useExp03Store()
-//const orders = store.ordersS
-const orders = storeToRefs(store).ordersS
-console.log(orders)
+const orders = store.ordersS
 
-watch(orders.value, () => {
-  cost.value = 0
-  orders.value.forEach((o) => {
-    cost.value += o.quantity * o.item.price!
-  }),
-    { deep: true }
-})
+watch(
+  orders,
+  () => {
+    cost.value = 0
+
+    orders.forEach((o) => {
+      cost.value += o.quantity * o.item.price!
+    })
+  },
+  { deep: true }
+)
 </script>
 <style scoped>
 .order {
