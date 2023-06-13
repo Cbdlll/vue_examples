@@ -4,12 +4,16 @@ import SideBarView from './views/SideBarView.vue'
 </script>
 
 <template>
-  <SideBarView id="sidebar" />
-  <RouterView id="router" />
+  <div id="side">
+    <SideBarView id="sidebar" />
+    <div>
+      <RouterView id="router" />
+    </div>
+  </div>
 </template>
 
 <style>
-#app {
+#side {
   display: flex;
 }
 #sidebar {
@@ -18,5 +22,6 @@ import SideBarView from './views/SideBarView.vue'
 }
 #router {
   border: 1px solid red;
+  padding: 10px;
 }
 </style>
