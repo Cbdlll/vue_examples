@@ -1,14 +1,17 @@
-import type { Course } from '@/views/example02/data/Exp02'
-import axios from 'axios'
+import type { Course, User, ResultVO } from '@/views/example04/data/data'
+import axios from '@/axios'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import type { User, ResultVO } from '../data/data'
 
 export const useExp04Store = defineStore('Exp04Store', () => {
-  const courseS = ref<Course[]>([])
-  const userS = ref<User>({ name: 'Wu', password: '111' })
+  const coursesS = ref<Course[]>([])
+  const userS = ref<User>({})
+  const getCoursesA = async () => {
+    const resp = await axios.get<ResultVO<{ courses: Course[] }>>('getCourses')
+    coursesS.value = resp.data.data?.courses
+  }
 
-  const loginA = async (data: { name: string; password: string }) => {
+  const loginA = async (data: { account: string; password: string }) => {
     // try可避免控制台的未捕获异常信息
     try {
       const resp = await axios.post<ResultVO<{ user: User }>>('login', data)
@@ -19,9 +22,11 @@ export const useExp04Store = defineStore('Exp04Store', () => {
       // eslint默认禁止空执行体。加一段注释或关闭该检测
     }
   }
+
   return {
-    courseS,
+    coursesS,
     userS,
-    loginA
+    loginA,
+    getCoursesA
   }
 })

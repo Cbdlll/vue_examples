@@ -1,6 +1,21 @@
+export interface Course {
+  id?: number
+  name?: string
+  createTime?: string
+}
+
 export interface User {
-  name: string
-  password: string
+  id?: number
+  level?: number
+  name?: string
+  sex?: string
+  title?: Title
+  courses?: Course[]
+}
+
+export interface Title {
+  id?: number
+  name?: string
 }
 
 export interface ResultVO<T> {
