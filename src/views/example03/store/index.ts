@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { getShop, listShops, type Order, type Shop } from '../data/data'
+import { getShop, listShops, type Order, type Shop } from '../data/Exp03'
 import { ref } from 'vue'
 
 export const useExp03Store = defineStore('Exp03Store', () => {

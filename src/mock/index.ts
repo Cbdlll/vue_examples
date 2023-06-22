@@ -2,7 +2,6 @@ import { listCourses } from '@/views/example02/data/Exp02'
 import axios from '@/axios'
 import MockAdapter from 'axios-mock-adapter'
 import type { ResultVO } from '@/views/example04/data/data'
-import * as consty from '@/datasource/Const'
 
 const mock = new MockAdapter(axios)
 // 过滤http前缀请求
