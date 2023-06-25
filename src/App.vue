@@ -25,10 +25,10 @@ const exception = computed(() => store.exceptionS)
 }
 #sidebar {
   border: 1px solid red;
-  width: 300px;
 }
 #router {
   border: 1px solid red;
   padding: 10px;
+  width: fit-content;
 }
 </style>

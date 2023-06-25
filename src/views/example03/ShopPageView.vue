@@ -19,12 +19,12 @@
 </template>
 <script lang="ts" setup>
 import { computed } from 'vue'
-import type { Item } from './data/data'
+import type { Item } from './data/Exp03'
 import { useExp03Store } from './store'
 interface Props {
   sid: string
 }
-const props = defineProps<Props>()
+let props = defineProps<Props>()
 
 const store = useExp03Store()
 // 绑定state数据
@@ -33,19 +33,19 @@ const shop = computed(() => store.shopCacheS.find((sh) => sh.id == Number.parseI
 !shop.value && store.getShopA(Number.parseInt(props.sid))
 // orders数组对象是响应式，添加移除元素是响应式
 const orders = store.ordersS
+
 const add = (item: Item) => {
   let order = orders.find((o) => o.item.id == item.id)
   if (order) {
-    order.quantity++
+    ++order.quantity
   } else {
-    // 对应item的order不存在，创建订单对象，加入订单列表
-    // 由于没有修改orders数组对象本身，可以不通过vuex事件
     order = { quantity: 1, item: item }
     orders.push(order)
   }
 }
+
 const remove = (item: Item) => {
-  const order = orders.find((o) => o.item.id == item.id)
+  let order = orders.find((o) => o.item.id == item.id)
   if (order) {
     const q = order.quantity--
     if (q == 0) {
@@ -53,10 +53,36 @@ const remove = (item: Item) => {
     }
   }
 }
+
 const orderQ = computed(() => (item: Item) => {
   const o = orders.find((o) => o.item.id == item.id)
   return o?.quantity ?? 0
 })
+
+// const add = (item: Item) => {
+//   let order = orders.find((o) => o.item.id == item.id)
+//   if (order) {
+//     order.quantity++
+//   } else {
+//     // 对应item的order不存在，创建订单对象，加入订单列表
+//     // 由于没有修改orders数组对象本身，可以不通过vuex事件
+//     order = { quantity: 1, item: item }
+//     orders.push(order)
+//   }
+// }
+// const remove = (item: Item) => {
+//   const order = orders.find((o) => o.item.id == item.id)
+//   if (order) {
+//     const q = order.quantity--
+//     if (q == 0) {
+//       orders.splice(orders.indexOf(order), 1)
+//     }
+//   }
+// }
+// const orderQ = computed(() => (item: Item) => {
+//   const o = orders.find((o) => o.item.id == item.id)
+//   return o?.quantity ?? 0
+// })
 </script>
 <style scoped>
 .card {

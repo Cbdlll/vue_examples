@@ -1,6 +1,6 @@
 <template>
   <div v-for="(order, index) of orders" :key="index">
-    {{ order.item.name }}/{{ order.quantity }}
+    {{ order.item.name }} / {{ order.quantity }}
   </div>
 </template>
 <script lang="ts" setup>

@@ -29,13 +29,23 @@ watch(
   orders,
   () => {
     cost.value = 0
-
     orders.forEach((o) => {
-      cost.value += o.quantity * o.item.price!
+      cost.value += (o.item.price ?? 0) * o.quantity
     })
   },
   { deep: true }
 )
+
+// watch(
+//   orders,
+//   () => {
+//     cost.value = 0
+//     orders.forEach((o) => {
+//       cost.value += o.quantity * o.item.price!
+//     })
+//   },
+//   { deep: true }
+// )
 </script>
 <style scoped>
 .order {
