@@ -5,8 +5,8 @@
     </el-form-item>
     <el-form-item label="Activity zone">
       <el-select v-model="form.region" placeholder="please select your zone">
-        <el-option label="Zone one" value="shanghai" />
-        <el-option label="Zone two" value="beijing" />
+        <el-option label="shanghai" value="shanghai" />
+        <el-option label="beijing" value="beijing" />
       </el-select>
     </el-form-item>
     <el-form-item label="Activity time">
@@ -47,7 +47,7 @@
     </el-form-item>
     <el-form-item>
       <el-button type="primary" @click="onSubmit">Create</el-button>
-      <el-button>Cancel</el-button>
+      <el-button>Cancel </el-button>
     </el-form-item>
   </el-form>
 </template>

@@ -2,7 +2,7 @@
   <div>
     <h2>Login</h2>
     <div>
-      <p>Wu/123</p>
+      <p>wu/123</p>
       <span>Name:&ensp;&ensp;&ensp;</span>
       <input type="text" v-model="tempUser.account" />
       <br />

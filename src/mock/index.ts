@@ -56,9 +56,9 @@ mock.onPost('login').reply((c) => {
   console.log(data)
 
   const { account, password } = JSON.parse(data)
-  if (account == 'Wu' && password == '123') {
+  if (account == 'wu' && password == '123') {
     resulVO.code = 200
-    resulVO.data = { role: '243f45a3ce', user: { name: 'Wu', sex: '男', title: '学生', level: 1 } }
+    resulVO.data = { role: '243f45a3ce', user: { name: 'wu', sex: '男', title: '学生', level: 1 } }
     resulVO.message = ''
     return [
       200,
