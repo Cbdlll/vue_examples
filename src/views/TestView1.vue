@@ -1,7 +1,9 @@
 <template>
   <el-calendar v-model="value" />
   <el-row class="mb-4">
-    <el-button type="danger" @click="Logout()">Logout </el-button>
+    <el-button type="danger" @click="Logout()">Logout
+    
+    </el-button>
     <el-button type="primary" @click="change()">change</el-button>
   </el-row>
 </template>
